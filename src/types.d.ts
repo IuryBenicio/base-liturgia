@@ -1,6 +1,5 @@
 type api = {
   tema: string;
-  subtema?: string;
   versiculo: string;
   pregador: string;
   santaCeia?: boolean;

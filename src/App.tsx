@@ -6,8 +6,6 @@ import { useQuery } from "@tanstack/react-query";
 import { RotateLoader } from "react-spinners";
 
 function App() {
-  // let liturgy: api;
-
   async function getLiturgy() {
     try {
       const response = await axios.get(
@@ -42,9 +40,6 @@ function App() {
               <span className="tema_name">TEMA:</span>
               <div className="tema_subtema">
                 <span className="tema_txt">"{liturgy.tema}"</span>
-                {liturgy.subtema && (
-                  <span className="subtema_txt">"{liturgy.subtema}"</span>
-                )}
               </div>
             </div>
             <span className="tema-versiculo">{liturgy.versiculo}</span>
@@ -64,8 +59,8 @@ function App() {
                 {Array.isArray(liturgy.louvoresIniciais) &&
                   liturgy.louvoresIniciais.map((e, index) => (
                     <li key={index}>
-                      <span className="nome">nome: {e.nome}</span>
-                      <span className="cantor">cantor: {e.cantor}</span>
+                      <span className="nome">{e.nome}</span>
+                      <span className="cantor">{e.cantor}</span>
                     </li>
                   ))}
               </ul>
@@ -80,12 +75,9 @@ function App() {
               <div className="palavra_data">
                 <h3>Pregador: {liturgy.pregador}</h3>
                 <div className="data_tema">
-                  <span>Tema:</span>
+                  {/* <span>Tema:</span> */}
                   <div className="data_tema_subtema">
-                    <span className="tema"> {liturgy.tema}</span> <br />
-                    {liturgy.subtema && (
-                      <span className="subtema">{liturgy.subtema}</span>
-                    )}
+                    <span className="tema">" {liturgy.tema} "</span>
                   </div>
                 </div>
               </div>
@@ -99,8 +91,8 @@ function App() {
                     <ul>
                       {liturgy.louvorPosPalavra.map((e, index) => (
                         <li key={index}>
-                          <span className="nome">nome: {e.nome}</span>
-                          <span className="cantor">cantor: {e.cantor}</span>
+                          <span className="nome">{e.nome}</span>
+                          <span className="cantor">{e.cantor}</span>
                         </li>
                       ))}
                     </ul>
@@ -113,22 +105,24 @@ function App() {
                 <span>Santa Ceia do Senhor</span>
               </section>
             )}
-            {Array.isArray(liturgy.avisos) && liturgy.avisos && (
-              <>
-                <section id="avisos">
-                  <h3>AVISOS</h3>
-                  <ul>
-                    {liturgy.avisos.map((e, index) => (
-                      <li key={index}>
-                        <span className="title">{e.titulo}:</span>
-                        <p>{e.descrição}</p>
-                      </li>
-                    ))}
-                  </ul>
-                </section>
-                <hr />
-              </>
-            )}
+            {liturgy.avisos &&
+              Array.isArray(liturgy.avisos) &&
+              liturgy.avisos && (
+                <>
+                  <section id="avisos">
+                    <h3>AVISOS</h3>
+                    <ul>
+                      {liturgy.avisos.map((e, index) => (
+                        <li key={index}>
+                          <span className="title">{e.titulo}:</span>
+                          <p>{e.descrição}</p>
+                        </li>
+                      ))}
+                    </ul>
+                  </section>
+                  <hr />
+                </>
+              )}
             <section id="avisos">
               <h3>ORAÇÃO FINAL</h3>
             </section>
@@ -138,7 +132,7 @@ function App() {
             id="tchau"
             style={{ backgroundColor: "#c13237", color: "white" }}
           >
-            <h2>Te esperamos próximo domingo</h2>
+            <h2>Te esperamos próximo no domingo</h2>
             <span>Fique com Deus</span>
           </section>
         </BodyContainer>
