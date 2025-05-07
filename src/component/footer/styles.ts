@@ -7,7 +7,9 @@ export const FooterContainer = styled.footer`
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  span {
+  a {
+    color: black;
+    text-decoration: none;
     display: flex;
     align-items: center;
     img {
@@ -17,5 +19,9 @@ export const FooterContainer = styled.footer`
     &:not(:last-child) {
       margin-bottom: 8px;
     }
+  }
+  span {
+    display: flex;
+    align-items: center;
   }
 `;
