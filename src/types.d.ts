@@ -3,6 +3,7 @@ type api = {
   versiculo: string;
   pregador: string;
   santaCeia?: boolean;
+  observacoes?: string[];
   louvoresIniciais: louvor[];
   louvorPosPalavra?: louvor[];
   louvorCeia?: louvor[];

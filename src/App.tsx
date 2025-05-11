@@ -132,7 +132,7 @@ function App() {
             id="tchau"
             style={{ backgroundColor: "#c13237", color: "white" }}
           >
-            <h2>Te esperamos próximo no domingo</h2>
+            <h2>Te esperamos no próximo domingo</h2>
             <span>Fique com Deus</span>
           </section>
         </BodyContainer>
