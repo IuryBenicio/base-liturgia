@@ -9,7 +9,7 @@ function App() {
   async function getLiturgy() {
     try {
       const response = await axios.get(
-        "https://qr-code-base-crista-back-production.up.railway.app/admin/getbefore/"
+        "https://adm-back.fly.dev/admin/getbefore/"
       );
 
       console.log(response.data.data);
